@@ -16,6 +16,7 @@ export interface IHomeInfo {
     banner: IBanner
     searchRecomments:ISearchRecomment[]
     transformer: ITransformer[]
+    scrollBarInfoList: IScrollBarInfo[]
     countdown:ICountdown
     activities:string[]
 }
@@ -35,6 +36,12 @@ export interface ICountdown{
 
 export interface IGood{
 
+}
+export interface IScrollBarInfo {
+    type: string
+    badge: string
+    detail: string
+    btn: string
 }
 
 

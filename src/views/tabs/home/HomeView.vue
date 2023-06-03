@@ -2,6 +2,10 @@
 import TheTop from "@/views/tabs/home/components/TheTop.vue";
 import {useToggle} from "@/use/useToggle";
 import SearchView from "@/views/search/SearchView.vue";
+import {fetchHomePageData} from "@/api/home";
+import {useAsync} from "@/use/useAsync";
+import type {IHomeInfo} from "@/types";
+
 const recomments = [
   {
     value:1,
@@ -13,6 +17,11 @@ const recomments = [
   ]
 
 const [isSearchViewShow,toggleSearchView] = useToggle(false)
+// home页中的数据
+const {data,pending} = useAsync(fetchHomePageData,
+    {} as IHomeInfo,
+    true)
+
 </script>
 <template>
 
@@ -26,11 +35,11 @@ const [isSearchViewShow,toggleSearchView] = useToggle(false)
     </Transition>
 
 <!--    向TheTop 传入recomments的属性-->
-
     <TheTop :recomments = "recomments"
             @searchClick="toggleSearchView"
     />
-    一二三四五六七八九十
+    {{pending}}
+    {{data}}
   </div>
 </template>
 

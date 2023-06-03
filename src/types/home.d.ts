@@ -11,3 +11,31 @@ export interface ISearchResult{
     label: string
     resultCount: number
 }
+// home 页信息
+export interface IHomeInfo {
+    banner: IBanner
+    searchRecomments:ISearchRecomment[]
+    transformer: ITransformer[]
+    countdown:ICountdown
+    activities:string[]
+}
+
+export interface IBanner{
+    imgUrl:string
+}
+export interface ITransformer{
+    imgUrl:string
+    label:string
+}
+
+export interface ICountdown{
+    time: number
+    goods:IGood
+}
+
+export interface IGood{
+
+}
+
+
+

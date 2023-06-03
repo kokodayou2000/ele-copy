@@ -17,12 +17,16 @@ const [isSearchViewShow,toggleSearchView] = useToggle(false)
 <template>
 
   <div class="home-page">
-<!--    向TheTop 传入recomments的属性-->
-    <SearchView v-if="isSearchViewShow"
-                @cancel="toggleSearchView"
-    >
+<!--Transition 实现动画效果-->
+    <Transition name="fade">
+      <SearchView v-if="isSearchViewShow"
+                  @cancel="toggleSearchView"
+      ></SearchView>
 
-    </SearchView>
+    </Transition>
+
+<!--    向TheTop 传入recomments的属性-->
+
     <TheTop :recomments = "recomments"
             @searchClick="toggleSearchView"
     />
@@ -30,8 +34,14 @@ const [isSearchViewShow,toggleSearchView] = useToggle(false)
   </div>
 </template>
 
-<style scoped>
-  .test{
-    font-size: 39px;
+<style lang="scss" scoped>
+  //动画执行和动画退出的效果 从 0-1 中间经历0.5s
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease;
+  }
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
   }
 </style>

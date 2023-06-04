@@ -11,6 +11,9 @@ export interface ISearchResult{
     label: string
     resultCount: number
 }
+export interface IBanner{
+    imgUrl:string
+}
 // home 页信息
 export interface IHomeInfo {
     banner: IBanner
@@ -21,9 +24,7 @@ export interface IHomeInfo {
     activities:string[]
 }
 
-export interface IBanner{
-    imgUrl:string
-}
+
 export interface ITransformer{
     imgUrl:string
     label:string
@@ -35,7 +36,10 @@ export interface ICountdown{
 }
 
 export interface IGood{
-
+    imgUrl:string
+    name:string
+    price:number
+    oldPrice:number
 }
 export interface IScrollBarInfo {
     type: string

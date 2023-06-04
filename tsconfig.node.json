@@ -4,6 +4,7 @@
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",
-    "types": ["node"]
+    "types": ["node"],
+//    "lib": ["es2021.intl"]
   }
 }
